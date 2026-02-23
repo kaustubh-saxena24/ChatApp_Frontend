@@ -6,7 +6,7 @@ import ChatWindow from './components/ChatWindow';
 const App = () => {
     const [username, setUsername] = useState('');
     
-    // Using our custom hook!
+    
     const { messages, isConnected, connect, sendMessage } = useChat();
 
     const handleJoin = (name) => {
