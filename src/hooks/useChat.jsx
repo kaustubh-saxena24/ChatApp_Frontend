@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import SockJS from 'sockjs-client';
 import Stomp from 'stompjs';
 
-// ⚠️ CHANGE THIS TO YOUR RAILWAY URL
+
 const SERVER_URL = 'https://chatappbackend-production-2844.up.railway.app/chat';
 
 export const useChat = () => {
@@ -14,7 +14,7 @@ export const useChat = () => {
         const socket = new SockJS(SERVER_URL);
         const client = Stomp.over(socket);
         
-        // Turn off debug logs to keep console clean
+        
   
 
         client.connect({}, () => {

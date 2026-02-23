@@ -18,22 +18,19 @@ const App = () => {
         sendMessage(username, content);
     };
 
-    if (!isConnected) {
-        return <Join onJoin={handleJoin} />;
-    }
-
     return (
-     <div className="app-container"> {/* 👈 ADD THIS WRAPPER */}
-        {!isConnected ? (
-            <Join onJoin={handleJoin} />
-        ) : (
-            <ChatWindow 
-                username={username} 
-                messages={messages} 
-                onSend={handleSend} 
-            />
-        )}
-    </div>
+        // The app-container wrapper must be here so the CSS applies to the whole app!
+        <div className="app-container">
+            {!isConnected ? (
+                <Join onJoin={handleJoin} />
+            ) : (
+                <ChatWindow 
+                    username={username} 
+                    messages={messages} 
+                    onSend={handleSend} 
+                />
+            )}
+        </div>
     );
 };
 
